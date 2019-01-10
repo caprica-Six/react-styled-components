@@ -8,7 +8,9 @@ import PasswordInput from './components/common/PasswordInput';
 
 class App extends Component {
   state = { 
-    theme: LightTheme
+    theme: LightTheme,
+    // show/hide password when typing
+    showPassword: false
   };
 
   handleToggleTheme = () => {
@@ -17,12 +19,24 @@ class App extends Component {
     })
   };
 
+  handleTogglePassword = () => {
+    this.setState({
+      showPassword: !this.state.showPassword
+    })
+  };
+
+
   render() {
     return (
       <ThemeProvider theme={this.state.theme}>
-      <Fragment>
+        <Fragment>
           <Button onClick={this.handleToggleTheme}> Ok </Button>
-          <PasswordInput />
+          <section>
+            <PasswordInput showPassword={this.state.showPassword} />
+            <Button onClick={this.handleTogglePassword}>
+              {this.state.showPassword ? 'Hide': 'Show'}
+            </Button>
+          </section>
         </Fragment>
       </ThemeProvider>
     );

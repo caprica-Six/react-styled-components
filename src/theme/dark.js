@@ -1,4 +1,5 @@
 const DarkTheme = {
+    id: 'dark',
     backgroundColor: 'black',
     primaryColor: 'whitesmoke'
 };

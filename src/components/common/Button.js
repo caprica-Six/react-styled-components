@@ -5,6 +5,7 @@ const Button  = styled.button`
     bordeR: 1px solid ${props => props.theme.primaryColor};
     padding: 10px;
     color: ${props => props.theme.primaryColor};
+    outline: none;
 
     ${ /* interpolate a function that have aaccess to the props within the `` 
         `` - tag template literals - ES6 do the magic as this is actually a function call.
@@ -15,7 +16,7 @@ const Button  = styled.button`
         `}
 `;
 
-/* Styled Comopnents generates a style sheet and attaches classNAmes to the DOM nodes, then injects thre style sheet at the end of the Head at runtime! */
+/* Styled Components generates a style sheet and attaches classNAmes to the DOM nodes, then injects thre style sheet at the end of the Head at runtime! */
 export default Button;
 
 

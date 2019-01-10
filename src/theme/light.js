@@ -1,4 +1,5 @@
 const LightTheme = {
+    id: 'light',
     backgroundColor: 'white',
     primaryColor: 'black'
 };

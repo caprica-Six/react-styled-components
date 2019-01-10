@@ -3,12 +3,23 @@ import './App.css';
 import Button from './components/common/Button';
 import { ThemeProvider } from 'styled-components';
 import LightTheme from "./theme/light";
+import DarkTheme from "./theme/dark";
 
 class App extends Component {
+  state = { 
+    theme: LightTheme
+  };
+
+  handleToggleTheme = () => {
+    this.setState({
+      theme: this.state.theme.id === 'light' ? DarkTheme : LightTheme
+    })
+  };
+
   render() {
     return (
-      <ThemeProvider theme={LightTheme}>
-        <Button> Ok </Button>
+      <ThemeProvider theme={this.state.theme}>
+        <Button onClick={this.handleToggleTheme}> Ok </Button>
       </ThemeProvider>
     );
   }

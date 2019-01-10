@@ -1,10 +1,12 @@
 import React, { Fragment, Component } from 'react';
 import './App.css';
-import Button from './components/common/Button';
+// import Button from './components/common/Button';  
 import { ThemeProvider } from 'styled-components';
 import LightTheme from "./theme/light";
 import DarkTheme from "./theme/dark";
-import PasswordInput from './components/common/PasswordInput';
+// import PasswordInput from './components/common/PasswordInput';
+import { Button } from 'reactstrap';
+import PrimaryButton from "./components/common/PrimaryButton";
 
 class App extends Component {
   state = { 
@@ -25,18 +27,25 @@ class App extends Component {
     })
   };
 
-
   render() {
     return (
       <ThemeProvider theme={this.state.theme}>
         <Fragment>
-          <Button onClick={this.handleToggleTheme}> Ok </Button>
+          
+          {/* <Button onClick={this.handleToggleTheme}> Ok </Button>
           <section>
             <PasswordInput showPassword={this.state.showPassword} />
             <Button onClick={this.handleTogglePassword}>
               {this.state.showPassword ? 'Hide': 'Show'}
             </Button>
-          </section>
+          </section> */}
+
+
+          {/* ReactStrap buttons */}
+          <div>
+            <Button color="primary">primary</Button>{' '}
+            <PrimaryButton>custom button</PrimaryButton>
+          </div>
         </Fragment>
       </ThemeProvider>
     );

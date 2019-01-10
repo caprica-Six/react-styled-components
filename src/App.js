@@ -7,11 +7,12 @@ import DarkTheme from "./theme/dark";
 import PasswordInput from './components/common/PasswordInput';
 import { Button as ReactstrapButton } from 'reactstrap';
 import PrimaryButton from "./components/common/PrimaryButton";
-import {createGlobalStyle} from 'styled-components';
+import Spinner from './components/common/Spinner';
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   body {
-
+    font-family: ${props => (props.theme.id === 'light' ? 'Arial' : 'Times New Roman')} !important;
   }
 `
 const ButtonWrapper = styled.div`
@@ -64,34 +65,38 @@ class App extends Component {
     return (
       <ThemeProvider theme={this.state.theme}>
         <AppWrapper>
-          <h1>React Styled Components</h1>
-          <Button onClick={this.handleToggleTheme}> Ok </Button>
-          <section>
-            <PasswordInput showPassword={this.state.showPassword} />
-            <Button onClick={this.handleTogglePassword}>
-              {this.state.showPassword ? 'Hide': 'Show'}
-            </Button>
-          </section> 
+            <h1>React Styled Components</h1>
+            <Button onClick={this.handleToggleTheme}> Ok </Button>
+            <section>
+              <PasswordInput showPassword={this.state.showPassword} />
+              <Button onClick={this.handleTogglePassword}>
+                {this.state.showPassword ? 'Hide': 'Show'}
+              </Button>
+            </section> 
 
 
-          {/* ReactStrap buttons */}
-            <ButtonWrapper>
-              <Button color="primary">primary</Button>
-            </ButtonWrapper>
-            <ButtonWrapper>
-              <PrimaryButton>custom button</PrimaryButton>
-            </ButtonWrapper>
-            <ButtonWrapper>
-              <ReactstrapButton color="info">reactstrap button</ReactstrapButton>
-            </ButtonWrapper>
-            <ButtonWrapper>
-              <ReactstrapRoundedButton color="primary">
-                 existing component
-              </ReactstrapRoundedButton>
-            </ButtonWrapper>
-            <ButtonWrapper>
-              <FacebookButton>Facebook button</FacebookButton>
-            </ButtonWrapper>
+            {/* ReactStrap buttons */}
+              <ButtonWrapper>
+                <Button color="primary">primary</Button>
+              </ButtonWrapper>
+              <ButtonWrapper>
+                <PrimaryButton>custom button</PrimaryButton>
+              </ButtonWrapper>
+              <ButtonWrapper>
+                <ReactstrapButton color="info">reactstrap button</ReactstrapButton>
+              </ButtonWrapper>
+              <ButtonWrapper>
+                <ReactstrapRoundedButton color="primary">
+                  existing component
+                </ReactstrapRoundedButton>
+              </ButtonWrapper>
+              <ButtonWrapper>
+                <FacebookButton>Facebook button</FacebookButton>
+              </ButtonWrapper>
+
+              <h2>Spinner</h2>
+              <Spinner />
+          <GlobalStyle />
         </AppWrapper>
       </ThemeProvider>
     );

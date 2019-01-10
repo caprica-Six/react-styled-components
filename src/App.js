@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React, { Fragment, Component } from 'react';
 import './App.css';
 import Button from './components/common/Button';
 import { ThemeProvider } from 'styled-components';
 import LightTheme from "./theme/light";
 import DarkTheme from "./theme/dark";
+import PasswordInput from './components/common/PasswordInput';
 
 class App extends Component {
   state = { 
@@ -19,7 +20,10 @@ class App extends Component {
   render() {
     return (
       <ThemeProvider theme={this.state.theme}>
-        <Button onClick={this.handleToggleTheme}> Ok </Button>
+      <Fragment>
+          <Button onClick={this.handleToggleTheme}> Ok </Button>
+          <PasswordInput />
+        </Fragment>
       </ThemeProvider>
     );
   }

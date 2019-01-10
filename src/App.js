@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
 import Button from './components/common/Button';
+import { ThemeProvider } from 'styled-components';
+import LightTheme from "./theme/light";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Button primary> Ok </Button>
-      </div>
+      <ThemeProvider theme={LightTheme}>
+        <Button> Ok </Button>
+      </ThemeProvider>
     );
   }
 }

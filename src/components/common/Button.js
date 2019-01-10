@@ -1,9 +1,10 @@
 import styled, { css } from 'styled-components';
 
 const Button  = styled.button`
-    background: white;
-    bordeR: 1px solid black;
+    background: ${props => props.theme.backgroundColor};
+    bordeR: 1px solid ${props => props.theme.primaryColor};
     padding: 10px;
+    color: ${props => props.theme.primaryColor};
 
     ${ /* interpolate a function that have aaccess to the props within the `` 
         `` - tag template literals - ES6 do the magic as this is actually a function call.
